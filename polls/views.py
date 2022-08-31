@@ -69,25 +69,6 @@ def logout_user(request):
     logout(request)
     return redirect('/')
 
-def change(request):
-    if request.method=='POST':
-      email=request.POST['email']
-      ol_pass=request.POST['old']
-      new_pass=request.POST['new']
-      con_pass=request.POST['conf']
-      obj=User.objects.filter(email=email,password=ol_pass)
-      if len(obj)>0:
-         if new_pass != con_pass:
-           return render(request,'change_pass.html',{'msg':'password mismatch','email':email})
-         else:
-          obj= User.objects.get(email=email)
-          obj.pasw=con_pass
-          obj.save()
-          return render(request,'change_pass.html',{'email':email,'msg':'congrats! Password change sucessfully'})
-      else:
-          return render(request,'change_pass.html')
-    else:
-      return render(request,'change_pass.html')
 
 def change_pass(request):
     if request.session.has_key('myname') and request.session.has_key('myemail'):
@@ -96,3 +77,21 @@ def change_pass(request):
           return render(request,'change_pass.html',{'email': email})
     else:
         return render(request,'change_pass.html')
+
+def change(request):
+  if request.method=='POST':
+    email=request.POST['email']
+    ol_pass=request.POST['old']
+    new_pass=request.POST['new']
+    con_pass=request.POST['conf']
+    obj=User.objects.filter(email=email,password=ol_pass)
+    if new_pass != con_pass:
+        return render(request,'change_pass.html',{'msg':'password mismatch','email':email})
+    else:
+        obj= User.objects.get(email=email)
+        obj.pasw=con_pass
+        obj.save()
+        return render(request,'change_pass.html',{'email':email,'msg':'congrats! Password change sucessfully'})
+  else:
+    return render(request,'change_pass.html')
+

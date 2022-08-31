@@ -55,6 +55,14 @@
 </head>
 <body>
     <div class="a">
+        {% if msg %}
+        <div class="alert alert-info alert-dismissible">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>{{msg}}</strong> 
+          </div>  
+          {% endif %}
+        <a href="/dash"><img src="/static/image/8.jpg" data-bs-toggle="tooltip"  data-bs-placement="top" title="Go to Home page"></a>
+
     <h2><i><u>Change password</u></i></h2>
     <br>
     <img src="/static/image/2.png" class="b1">
@@ -66,18 +74,14 @@
         <label class="b"> New Password :</label> <input type="password"  name="new" class="a2" ><br><br>
         <label class="b">Confirm password : </label><input type="password" class="a2"  name="conf"><br><br>
       <button class="a3">Change..</button>
-      {% if messages %}
-      <div class="messages">
-          {% for message in messages %}
-          <div {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          {% endfor %}
-      </div>
-      {% endif %}
+     
     </form>
     </div>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+        </script>
 </body>
 </html>
