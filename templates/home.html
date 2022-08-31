@@ -108,15 +108,15 @@
      <u class="text-muted"  style="  font-size:30px;"><p class="text-muted" >Contact us</p></u>
      <form action="email" method="post">
        {% csrf_token %}
-       <label  class="text-muted">Email : </label>&nbsp; &nbsp;<input type="email" style="border-radius:20px; " class="bg-muted text-dark" name="em" required placeholder="Your mail"><br><br>
-       <label  class="text-muted">Subject : </label>&nbsp; &nbsp;<input type="text" style="border-radius:20px; " class="bg-muted text-dark" name="sub" required placeholder="Your subject"><br><br>
-     <textarea rows="8" cols="28" style="border-radius:20px; " type="text" class="bg-muted text-dark" name="addr" required placeholder="Your message"></textarea><br><br>
-       <button class="bg-muted text-dark" style="width:100px; height:30px; border-radius:20px;" type="submit">Send</button>
+       <label  class="text-muted" style=" font-family: Georgia, 'Times New Roman', Times, serif; font-style:oblique;">Email : </label>&nbsp; &nbsp;<input type="email" style="border-radius:10px; font-style:oblique; font-family: Georgia, 'Times New Roman', Times, serif; " class="bg-muted text-dark" name="em" required placeholder="Your mail"><br><br>
+       <label  class="text-muted" style=" font-family: Georgia, 'Times New Roman', Times, serif; font-style:oblique;">Subject : </label>&nbsp; &nbsp;<input type="text" style="border-radius:10px; font-style:oblique; font-family: Georgia, 'Times New Roman', Times, serif; " class="bg-muted text-dark" name="sub" required placeholder="Your subject"><br><br>
+     <textarea rows="8" cols="28" style="border-radius:10px; font-style:oblique;  font-family: Georgia, 'Times New Roman', Times, serif; " type="text" class="bg-muted text-dark" name="addr" required placeholder="Your message"></textarea><br><br>
+       <button class="bg-muted text-dark" style="width:100px; font-style:oblique; height:30px; border-radius:10px;  font-family: Georgia, 'Times New Roman', Times, serif;" type="submit">Send</button>
        {{msg}}
      </form>
    </div>
    <br>
-   <div class="bg-dark"  style="margin-left: 2%; text-align:center; margin-right:2%; margin-bottom:2%; height:80px;">
+   <div class="bg-dark"  style="margin-left: 2%; text-align:center; margin-right:2%; margin-bottom:2%; border-radius:10px; height:80px;">
      <p class="text-muted" style=" padding:10px; font-size:20px;">Copyright  &COPY; &acE; 2022
        <br> Design by Aman
      </p>
